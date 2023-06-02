@@ -1,23 +1,17 @@
 <?php 
 
     /*
-      ! Calcular la masa total de una flota de naves espaciales
+      ! Verificar la existencia de un planeta en un sistema solar
     */
 
 
-    $naves_masa = ["nave1" => 100, "nave2" => 10, "nave3" => 50, "nave4" => 50];
+    if(isset($_GET["name"])){
 
-
-    function suma_masa($acc, $el){
-
-        $acc += $el;
-        return $acc;
+        $planetas = ["mercurio", "venuz", "tierra", "marte", "jupiter", "saturno", "urano", "neptuno"];
+    
+        $response = (in_array($_GET["name"], $planetas)) ? true : false;
+        echo json_encode([ "existe" => $response ]);
     }
-    
-    $resultado = array_reduce(array_values($naves_masa), "suma_masa");
-    echo "La suma de la masa de la flota es de: ";
-    echo $resultado;
-    
 ?>
 
 
