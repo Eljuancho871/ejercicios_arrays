@@ -1,23 +1,23 @@
 <?php 
 
     /*
-      ! Eliminar elementos duplicados de una lista de especies alienígenas
+      ! Encontrar planetas comunes en dos sistemas solares
     */
 
 
-    $aliens = ["aca", "joda", "eche", "marciano", "ali", "", "uranoMar", "uranoMar", "ali", "aca"];
+    $planetas_solar1 = ["mercurio", "venuz", "tierra", "marte", "jupiter", "saturno", "urano", "neptuno"];
 
+    $planetas_solar2 = ["mercurio", "venuz", "tierras", "morte", "jupyter", "saturnu", "urano", "netuno"];
+  
+    $planetas_comunes = array_intersect($planetas_solar1, $planetas_solar2);
 
-    $aliens_unique = array_filter(array_unique($aliens));
+    echo "Planetas comunes entre los dos sistemas solares";
 
-    echo "aliens encontrados sin repetirse";
-    forEach($aliens_unique as $key => $value){
+    forEach($planetas_comunes as $key => $value){
 
         echo "<br/>";
         echo "---> ".$value;
     }
-  
-
 ?>
 
 
