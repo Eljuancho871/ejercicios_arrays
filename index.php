@@ -1,17 +1,14 @@
 <?php 
 
     /*
-      ! Verificar si un tipo de nave espacial está en tu flota
+      ! Verificar la existencia de un planeta en un sistema solar
     */
 
 
-    if(isset($_GET["name"])){
-
-        $naves = ["nave1", "nave2", "nave3", "nave4", "nave5", "nave6", "nave7"];
+    $planetas = ["mercurio", "venuz", "tierra", "marte", "jupiter", "saturno", "urano", "neptuno"];
+  
     
-        $response = (in_array($_GET["name"], $naves)) ? true : false;
-        echo json_encode([ "existe" => $response ]);
-    }
+    echo "Tienes una mision hacia ".$planetas[array_rand($planetas)];
 ?>
 
 
