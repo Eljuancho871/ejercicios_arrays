@@ -14,6 +14,10 @@ $FORM.addEventListener("submit", async(e) => {
     e.preventDefault();
     const num = document.querySelector("#num").value;
     const DATA = await fetch_data(num);
-    
-    $RESULTADO.innerHTML = DATA["planeta"];
+    $RESULTADO.innerHTML = "";
+
+    DATA.forEach((el, index) => {
+
+        $RESULTADO.innerHTML += `Planeta ${index + 1} = ${el}, `;
+    });
 });

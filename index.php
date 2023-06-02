@@ -1,17 +1,15 @@
 <?php 
 
     /*
-      ! Identificar planetas y sus respectivos números de orden en el sistema solar
-      ? Imagina que tienesun array que representa los planetas en nuestro sistema solar. Las claves son los nombres de los planetas y los valores son sus respectivos números de orden,empezandodesdeel sol.
+      ! Crear un array para un sistema solar
+      ?  Supongamos que estás creando un juego de simulación espacial y necesitas crear un sistema solar básico. Decides que cada sistema solar en tu juego debe tener un cierto númerodeplanetascuandosecrea
     */
 
-    $planetas = ["sol" => 0, "mercurio" => 1, "venus" => 2, "tierra" => 3, "marte" => 4, "jupiter" => 5, "saturno" => 6, "urano" => 7, "neptuno" => 8, "pluton" => 9];
+    if($_GET["num"]){
 
-    $planetas_llave_invertida = array_flip($planetas);
-    $index = (isset($_GET["num"])) ? $_GET["num"] : "ningun dato";
-
-    $planeta = isset($planetas_llave_invertida[$index]) ? $planetas_llave_invertida[$index] : "no se encontro";
-    echo json_encode(["planeta" => $planeta]);
+        $array_planetas = array_fill(0, $_GET["num"], "Deshabitado");
+        echo json_encode($array_planetas);
+    }
 ?>
 
 
