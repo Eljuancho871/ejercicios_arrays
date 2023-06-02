@@ -1,14 +1,23 @@
 <?php 
 
     /*
-      ! Crear un array para un sistema solar
-      ?  Supongamos que estás creando un juego de simulación espacial y necesitas crear un sistema solar básico. Decides que cada sistema solar en tu juego debe tener un cierto númerodeplanetascuandosecrea
+      ! Filtrar planetas habitables
     */
 
-    if($_GET["num"]){
+    $planetas = ["Venus" => false, "Tierra" => true, "Marte" => true, "Mercurio" => false, "saturno" => false, "venus" => false, "jupiter" => false];
 
-        $array_planetas = array_fill(0, $_GET["num"], "Deshabitado");
-        echo json_encode($array_planetas);
+    $planetas_habitables = array_filter($planetas, function ($value, $key){
+
+        return $value === true;
+    
+    }, ARRAY_FILTER_USE_BOTH);
+
+    echo "planetas habitables";
+
+    foreach($planetas_habitables as $key => $value){
+
+        echo "<br/>";
+        echo "planeta: ".$key;
     }
 ?>
 
