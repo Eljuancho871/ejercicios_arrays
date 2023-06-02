@@ -1,7 +1,7 @@
 <?php 
 
     /*
-      ! Encontrar planetas comunes en dos sistemas solares
+      ! Encontrar planetas únicos en dos sistemas solares
     */
 
 
@@ -9,11 +9,12 @@
 
     $planetas_solar2 = ["mercurio", "venuz", "tierras", "morte", "jupyter", "saturnu", "urano", "netuno"];
   
-    $planetas_comunes = array_intersect($planetas_solar1, $planetas_solar2);
+    $planetas_unidos = array_merge($planetas_solar1, $planetas_solar2);
+    $planetas_unicos = array_unique($planetas_unidos);
 
-    echo "Planetas comunes entre los dos sistemas solares";
+    echo "Planetas unicos entre los dos sistemas solares";
 
-    forEach($planetas_comunes as $key => $value){
+    forEach($planetas_unicos as $key => $value){
 
         echo "<br/>";
         echo "---> ".$value;
