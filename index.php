@@ -1,24 +1,23 @@
 <?php 
 
     /*
-      ! Filtrar planetas habitables
+      ! Calcular la masa total de una flota de naves espaciales
     */
 
-    $planetas = ["Venus" => false, "Tierra" => true, "Marte" => true, "Mercurio" => false, "saturno" => false, "venus" => false, "jupiter" => false];
 
-    $planetas_habitables = array_filter($planetas, function ($value, $key){
+    $naves_masa = ["nave1" => 100, "nave2" => 10, "nave3" => 50, "nave4" => 50];
 
-        return $value === true;
-    
-    }, ARRAY_FILTER_USE_BOTH);
 
-    echo "planetas habitables";
+    function suma_masa($acc, $el){
 
-    foreach($planetas_habitables as $key => $value){
-
-        echo "<br/>";
-        echo "planeta: ".$key;
+        $acc += $el;
+        return $acc;
     }
+    
+    $resultado = array_reduce(array_values($naves_masa), "suma_masa");
+    echo "La suma de la masa de la flota es de: ";
+    echo $resultado;
+    
 ?>
 
 
