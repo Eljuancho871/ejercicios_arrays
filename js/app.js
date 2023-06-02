@@ -17,10 +17,10 @@ $FORM.addEventListener("submit", async(e) => {
 
     if(DATA["existe"] === true){
 
-        $RESULTADO.innerHTML = `Si existe!!!!!!`;
+        $RESULTADO.innerHTML = `Si existe la nave en tu flota!!!!!!`;
     }else{
         
         
-        $RESULTADO.innerHTML = `No existe!!!!!!`;
+        $RESULTADO.innerHTML = `No existe la nave en tu flota !!!!!!`;
     }
 });
