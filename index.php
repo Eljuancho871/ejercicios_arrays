@@ -1,14 +1,23 @@
 <?php 
 
     /*
-      ! Verificar la existencia de un planeta en un sistema solar
+      ! Eliminar elementos duplicados de una lista de especies alienígenas
     */
 
 
-    $planetas = ["mercurio", "venuz", "tierra", "marte", "jupiter", "saturno", "urano", "neptuno"];
+    $aliens = ["aca", "joda", "eche", "marciano", "ali", "", "uranoMar", "uranoMar", "ali", "aca"];
+
+
+    $aliens_unique = array_filter(array_unique($aliens));
+
+    echo "aliens encontrados sin repetirse";
+    forEach($aliens_unique as $key => $value){
+
+        echo "<br/>";
+        echo "---> ".$value;
+    }
   
-    
-    echo "Tienes una mision hacia ".$planetas[array_rand($planetas)];
+
 ?>
 
 
